@@ -37,14 +37,14 @@
     "@adonisjs/repl"
   ],
   "directories": {
-    "public": "./data"
+    "public": "./public"
   },
   "metaFiles": [
     ".env",
     ".adonisrc.json",
     "resources/views/**/*.edge",
     {
-      "pattern": "data/**",
+      "pattern": "public/**",
       "reloadServer": false
     },
     {

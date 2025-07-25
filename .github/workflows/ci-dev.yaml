@@ -10,7 +10,7 @@ env:
   NODE_VERSION: 'latest'
   IMAGE_TAG: admin-app-dev
   KUBE_NAMESPACE: dev
-  SERVER_PORT: 3333
+  SERVER_PORT: 443
 
 jobs:
 

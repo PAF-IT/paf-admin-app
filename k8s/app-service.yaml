@@ -6,7 +6,8 @@ metadata:
     app: admin-app
 spec:
   ports:
-    - port: ${SERVER_PORT}
+  - port: ${SERVER_PORT}
+    targetPort: 80
   selector:
     app: admin-app
   type: LoadBalancer

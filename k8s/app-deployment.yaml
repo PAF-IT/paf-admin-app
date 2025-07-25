@@ -39,7 +39,7 @@ spec:
                 name: admin-app
                 key: mysql_user
           - name: PORT
-            value: '${SERVER_PORT}'
+            value: '80'
           - name: HOST
             value: 0.0.0.0
           - name: NODE_ENV
@@ -75,7 +75,6 @@ spec:
                 name: admin-app
                 key: dropbox_refresh_token
 
-
         ports:
-        - containerPort: ${SERVER_PORT}
+        - containerPort: 80
           name: admin-app

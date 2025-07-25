@@ -2,10 +2,12 @@ import axios from 'axios'
 import {get, writable} from 'svelte/store'
 
 
-export const api = axios.create({
-    baseURL: 'http://localhost:3333'
-    // baseURL: 'https://api.pa-f.net'
-})
+export const api = axios.create(
+    {
+        // baseURL: 'http://localhost:3333'
+        // baseURL: 'https://api.pa-f.net'
+    }
+)
 
 export const loggedIn = writable({authenticating: true, loggedIn: false})
 export const role = writable('')
