@@ -8,7 +8,7 @@ on:
 env:
   # Set global action env variables for PROD:
   NODE_VERSION: 'latest'
-  IMAGE_TAG: paf-admin-app-prod
+  IMAGE_TAG: admin-app-prod
   KUBE_NAMESPACE: prod
   SERVER_PORT: 443
 
@@ -152,7 +152,7 @@ jobs:
           kubectl get deployment -n ${{ env.KUBE_NAMESPACE }}
 
           printf "\n📝 Latest Pod Logs:"
-          kubectl logs -l app=paf-admin-app -n ${{ env.KUBE_NAMESPACE }} --tail=20
+          kubectl logs -l app=admin-app -n ${{ env.KUBE_NAMESPACE }} --tail=20
 
           printf "\n🔗 Load Balancer Endpoints:"
           kubectl get svc -n ${{ env.KUBE_NAMESPACE }} -o custom-columns=NAME:.metadata.name,TYPE:.spec.type,EXTERNAL-IP:.status.loadBalancer.ingress[0].ip,PORTS:.spec.ports[*].port

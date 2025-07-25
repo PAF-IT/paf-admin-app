@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: paf-admin-app
+  name: admin-app
   labels:
-    app: paf-admin-app
+    app: admin-app
 spec:
   selector:
     matchLabels:
-      app: paf-admin-app
+      app: admin-app
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: paf-admin-app
+        app: admin-app
     spec:
       containers:
       - image: ${IMAGE}
-        name: paf-admin-app
+        name: admin-app
         env:
           - name: MYSQL_HOST
             value: paf-admin-mysql
@@ -26,20 +26,20 @@ spec:
           - name: MYSQL_DATABASE
             valueFrom:
               configMapKeyRef:
-                name: paf-admin-app
+                name: admin-app
                 key: mysql_database
           - name: MYSQL_PASSWORD
             valueFrom:
               configMapKeyRef:
-                name: paf-admin-app
+                name: admin-app
                 key: mysql_password
           - name: MYSQL_USER
             valueFrom:
               configMapKeyRef:
-                name: paf-admin-app
+                name: admin-app
                 key: mysql_user
           - name: SERVER_PORT
             value: '${SERVER_PORT}'
         ports:
         - containerPort: ${SERVER_PORT}
-          name: paf-admin-app
+          name: admin-app
