@@ -23,7 +23,7 @@ spec:
             value: paf-admin-mysql
           - name: MYSQL_PORT
             value: '3306'
-          - name: MYSQL_DATABASE
+          - name: MYSQL_DB_NAME
             valueFrom:
               configMapKeyRef:
                 name: admin-app
@@ -38,8 +38,44 @@ spec:
               configMapKeyRef:
                 name: admin-app
                 key: mysql_user
-          - name: SERVER_PORT
+          - name: PORT
             value: '${SERVER_PORT}'
+          - name: HOST
+            value: 0.0.0.0
+          - name: NODE_ENV
+            value: production
+          - name: APP_KEY
+            value: ohLVdeSZ78VtWMSJtNN7kb5DkmCNxP91
+          - name: APP_NAME
+            value: PAF-admin
+          - name: SESSION_DRIVER
+            value: cookie
+          - name: CACHE_VIEWS
+            value: 'false'
+          - name: DB_CONNECTION
+            value: mysql
+          - name: SPARKPOST_API_KEY
+            valueFrom:
+              configMapKeyRef:
+                name: admin-app
+                key: sparkpost_api_key
+          - name: DROPBOX_USER
+            valueFrom:
+              configMapKeyRef:
+                name: admin-app
+                key: dropbox_user
+          - name: DROPBOX_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                name: admin-app
+                key: dropbox_password
+          - name: DROPBOX_REFRESH_TOKEN
+            valueFrom:
+              configMapKeyRef:
+                name: admin-app
+                key: dropbox_refresh_token
+
+
         ports:
         - containerPort: ${SERVER_PORT}
           name: admin-app

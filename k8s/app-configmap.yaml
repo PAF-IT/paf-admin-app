@@ -5,6 +5,10 @@ metadata:
   labels:
     app: admin-app
 data:
+  dropbox_password: "${DROPBOX_PASSWORD}"
+  dropbox_refresh_token: "${DROPBOX_REFRESH_TOKEN}"
+  dropbox_user: "${DROPBOX_USER}"
   mysql_database: "${MYSQL_DATABASE}"
   mysql_password: "${MYSQL_PASSWORD}"
   mysql_user: "${MYSQL_USER}"
+  sparkpost_api_key: "${SPARKPOST_API_KEY}"
