@@ -1,0 +1,36 @@
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.multiselect {
+	max-height: 80px;
+	overflow-y: auto;
+}
+
+.strikethrough {
+	text-decoration: line-through;
+}
+
+.paf-navi-bg {
+	background-color: white;
+}
+
+.paf-tooltip-total {
+	background: linear-gradient(0deg, #FAC213 0%, transparent 100%);
+}
+
+.paf-top-section-bg {
+	background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+}
+
+.paf-arrow-circle {
+	height: 25px;
+	width: 25px;
+	background-color: white;
+	border-radius: 50%;
+	text-align: center;
+	border: 1px solid lightgray;
+	color: black;
+}

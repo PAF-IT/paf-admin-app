@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: paf-admin-app
+  labels:
+    app: paf-admin-app
+data:
+  mysql_database: "${MYSQL_DATABASE}"
+  mysql_password: "${MYSQL_PASSWORD}"
+  mysql_user: "${MYSQL_USER}"
